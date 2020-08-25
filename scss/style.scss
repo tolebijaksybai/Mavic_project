@@ -1,0 +1,601 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+@import "global";
+
+.header {
+    position: fixed;
+    z-index: 10;
+    top: 30px;
+    left: 0;
+    right: 0;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @extend %ubuntu-medium;
+        font-size: 15px;
+        line-height: 16px;
+        text-transform: uppercase;
+        min-height: 30px;
+    }
+
+    &__phone {
+        @extend %ubuntu-bold;
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    &__btn {
+        margin-right: 8px;
+        padding: 7px 28px;
+        @extend %ubuntu-bold;
+        border: 1px solid #fff;
+        outline: none;
+        border-radius: 3px;
+        font-size: 14px;
+        line-height: 16px;
+        color: #FFF;
+        cursor: pointer;
+        background-color: transparent;
+        transition: all 0.3s;
+
+        &:hover {
+            color: #000;
+            background: #fff;
+        }
+    }
+}
+
+.menu {
+    .menu_list-item {
+        display: inline-block;
+        margin-left: 20px;
+    }
+}
+
+.top {
+    background-image: url(../img/header/header-bg.jpg);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: radial-gradient(45.97% 54.43% at 50% 45.57%, rgba(23, 26, 28, 0) 50.28%, rgba(23, 26, 28, 0.00225974) 50.29%, rgba(4, 5, 5, 0.820343) 58.72%, rgba(5, 5, 6, 0.792703) 80.08%, #000000 87.89%);
+        opacity: 0.4;
+    }
+    &__image {
+        width: 100%;
+    }
+    &__wrapper {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__title {
+        @extend %sf-semibold;
+        font-size: 96px;
+        line-height: 115px;
+        margin-bottom: 25px;
+    }
+
+
+    &__text {
+        max-width: 325px;
+        margin: 25px 0 35px;
+        font-size: 17px;
+        line-height: 150%;
+    }
+
+    &__social-item {
+        display: inline-block;
+        margin: 0 25px;
+    }
+
+    &__social-link {
+        opacity: 0.5;
+        transition: all 0.3s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.products {
+
+    &__inner {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__text {
+        max-width: 440px;
+
+        p {
+            margin: 0;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__slider-box {
+        position: relative;
+        padding-top: 110px;
+    }
+
+    &__slider {
+        max-width: 560px;
+
+        &::before {
+            content: '';
+            width: 564px;
+            height: 280px;
+            position: absolute;
+            border: 4px solid #FFFFFF;
+            top: -15px;
+            right: -17px;
+        }
+    }
+
+    &__slider-text {
+        position: absolute;
+        width: 285px;
+        @extend %ubuntu-medium;
+        bottom: 30px;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: right;
+        z-index: 5;
+        left: -250px;
+    }
+}
+
+.slider-btn {
+    padding: 16px 26px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    position: absolute;
+    cursor: pointer;
+    bottom: -50px;
+    z-index: 5;
+    right: 0;
+
+    svg {
+        stroke: #000;
+    }
+
+    &__left {
+        right: 64px;
+    }
+
+    &.slick-disabled {
+        background-color: #000;
+
+        svg {
+            stroke: #fff;
+        }
+    }
+}
+
+.benefits {
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 25px;
+    }
+
+    &__item-1 {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 245px;
+            height: 45px;
+            right: -56px;
+            top: 39px;
+            background-image: url(../img/benefits/1-2.svg);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+    }
+
+    &__item-3 {
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+    }
+
+    &__item-3 {
+        &::before {
+            background-image: url(../img/benefits/3-4.svg);
+            width: 254px;
+            height: 39px;
+            top: 60px;
+            right: -65px;
+        }
+
+        &::after {
+            background-image: url(../img/benefits/2-3.svg);
+            width: 463px;
+            height: 62.5px;
+            top: -77px;
+            right: -39px;
+        }
+    }
+
+    &__item {
+        box-sizing: border-box;
+        margin-bottom: 100px;
+        display: flex;
+        align-items: flex-end;
+
+        &:nth-child(even) {
+            margin-left: 40px;
+            transform: translateY(25px);
+        }
+
+        &:nth-child(3) {
+            margin-left: 30px;
+        }
+
+        &:nth-child(4) {
+            margin-left: 60px;
+        }
+
+    }
+
+    &__num {
+        @extend %ubuntu-bold;
+        font-size: 36px;
+        line-height: 41px;
+        margin-right: 10px;
+    }
+
+    &__img {
+        position: relative;
+        margin-right: 32px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 195px;
+            height: 128px;
+            border: 2px solid #FFF;
+            top: -12px;
+            right: -12px;
+            z-index: -1;
+        }
+    }
+
+    &__info {
+        width: 300px;
+    }
+
+    &__info-title {
+        width: 123px;
+        @extend %ubuntu-bold;
+        font-size: 21px;
+        line-height: 24px;
+    }
+
+    &__info-text {
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+}
+
+.specification {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 50px;
+    }
+
+    &__box {
+        width: 280px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+    }
+
+    &__item {
+        img {
+            margin-left: -60px;
+            margin-top: -37px;
+        }
+    }
+
+    &__box-2 {
+        margin-top: 140px;
+    }
+
+    &__box-4 {
+        margin-top: 150px;
+    }
+
+    &__box-1::before {
+        width: 230px;
+        height: 114px;
+        background-image: url(../img/specification/1.svg);
+        right: -111px;
+        top: 15px;
+    }
+
+    &__box-2::before {
+        width: 346px;
+        height: 80.97px;
+        background-image: url(../img/specification/2.svg);
+        right: -271px;
+        top: -65px;
+    }
+
+    &__box-3::before {
+        width: 258px;
+        height: 102.67px;
+        background-image: url(../img/specification/3.svg);
+        left: -280px;
+        top: 15px;
+    }
+
+    &__box-4::before {
+        width: 123.5px;
+        height: 89px;
+        background-image: url(../img/specification/4.svg);
+        left: -136px;
+        top: -75px;
+    }
+
+
+    &__box-title {
+        @extend %ubuntu-bold;
+        font-size: 21px;
+        line-height: 28px;
+    }
+
+    &__box-text {
+        width: 266px;
+        font-size: 15px;
+        line-height: 18px;
+        margin: 10px 0 0 0;
+    }
+}
+
+/* Questions Section */
+.questions {
+    &__items {
+        max-width: 757px;
+        padding-bottom: 15px;
+    }
+
+    &__item {
+        max-width: 690px;
+        margin-top: 5px;
+        background: rgba(0, 0, 0, 0.3);
+        position: relative;
+
+        &:nth-child(3)::before {
+            content: '';
+            position: absolute;
+            width: 319px;
+            height: 125px;
+            background-image: url(../img/questions/q_mavic.png);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            top: -35px;
+            right: -391px;
+        }
+    }
+
+    &__item-title {
+        padding: 20px 10px 24px 40px;
+        @extend %ubuntu-medium;
+        font-size: 21px;
+        line-height: 23px;
+        color: rgba(#fff, .8);
+        cursor: pointer;
+        position: relative;
+
+
+        &::after {
+            content: url(../img/arrows/q_down.svg);
+            position: absolute;
+            width: 72px;
+            height: 67px;
+            top: 0;
+            right: -72px;
+            background-color: #FFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__item-text {
+        margin: 0;
+        padding: 0 5px 60px 50px;
+        font-size: 15px;
+        line-height: 22px;
+        display: none;
+    }
+
+    &__item.questions__item--active {
+        .questions__item-title::after {
+            transform: rotate(180deg);
+        }
+
+        .questions__item-text {
+            display: block;
+        }
+    }
+}
+
+/* Contacts section */
+.contacts {
+    &__inner {
+        display: flex;
+        padding-left: 50px;
+    }
+
+    &__social-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    &__social-item:nth-child(2) {
+        margin: 28px 0;
+    }
+
+    &__info {
+        width: 240px;
+        margin-right: 60px;
+    }
+
+    &__info-box {
+        margin-bottom: 30px;
+    }
+
+    &__info-box:nth-child(3) {
+        margin-bottom: 0;
+    }
+
+    &__info-title {
+        @extend %ubuntu-bold;
+        font-size: 21px;
+        line-height: 24px;
+        margin-top: 0;
+        margin-bottom: 13px;
+    }
+
+    &__info-phone,
+    &__info-mail {
+        font-size: 15px;
+        line-height: 19px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__form {
+        width: 570px;
+        margin-right: 106px;
+    }
+
+    &__form-title {
+        margin: 0;
+        margin-bottom: 13px;
+        @extend %ubuntu-bold;
+        font-size: 21px;
+        line-height: 24px;
+    }
+
+    &__form-text {
+        margin: 0;
+        font-size: 15px;
+        line-height: 19px;
+    }
+
+    &__form-line {
+        margin-top: 12px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__form-input,
+    &__form-textarea {
+        padding: 15px;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__form-input {
+        flex-basis: 48%;
+    }
+
+    &__form-textarea {
+        width: 100%;
+        min-height: 144px;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0.95;
+        resize: none;
+        margin-bottom: 20px;
+    }
+
+    &__form-btn {
+        padding: 10px 15px;
+        border: 1px solid #FFFFFF;
+        border-radius: 2px;
+        @extend %ubuntu-bold;
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 0.03em;
+        cursor: pointer;
+        background-color: transparent;
+        transition: all 0.3s;
+        color: #fff;
+        text-transform: uppercase;
+
+        &:hover {
+            color: #000;
+            background: #fff;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    left: 0;    
+    right: 0;
+    bottom: 32px;
+    &__copy {
+        text-align: right;
+        font-size: 13px;
+        line-height: 17px;
+        color: rgba(#fff, 0.64)
+    }
+}
+
+@import "media";
